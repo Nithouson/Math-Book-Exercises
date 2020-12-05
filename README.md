@@ -11,6 +11,6 @@ Ch5 二项式系数 （12-4）
 Ch6 容斥原理及其应用 （3-14）  
 
 ## Project Euler
-根据欧拉计划社区规则，在此不公开我的解题思路
-![avatar](https://projecteuler.net/profile/Nithouson.png)
+根据欧拉计划社区规则，在此不公开我的解题思路    
+![avatar](https://projecteuler.net/profile/Nithouson.png)    
 Friend Key: 1043818_popaSsT25IASEgNOG9yALDN3rLlJ6dnj
