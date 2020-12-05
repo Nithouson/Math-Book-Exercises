@@ -1,6 +1,6 @@
 # Math-Book-Exercises
 数学教材/问题集题目解答  
-有两类题未被收录：简单或者有套路的；我目前不会的。
+有两类题未被收录：简单或者有明显套路的；我目前不会的。
 
 ## Introduction to Combinatorics (5th edition) by R.Brualdi
 Ch1 什么是组合数学 （6-21）  
