@@ -1,0 +1,107 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{CJK}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{indentfirst}
+%\usepackage[colorlinks,linkcolor=black]{hyperref}
+\usepackage{geometry}
+\geometry{left=2.0cm,right=2.0cm,top=2.5cm,bottom=2.5cm}
+%\hypersetup{CJKbookmarks=true}
+
+\begin{document}
+\begin{CJK*}{GBK}{song}
+\pagenumbering{Roman}
+
+\Large
+\title{\textbf{Axler《线性代数应该这样学》(第三版)\\ 习题选解}}
+\author{Alfred Sines\footnote{Department of Algebra, Cloud Society}}
+\date{2020.9.4}
+\maketitle
+
+\renewcommand{\contentsname}{\centerline{目录}}
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+\large
+%\begin{flushleft}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\section{向量空间}
+
+\subsection{$\mathbb{R}^n$与$\mathbb{C}^n$}
+
+\par 说明: 在本书中$\mathbb{F}$表示$\mathbb{R}$或$\mathbb{C}$.
+
+\subsection{向量空间的定义}
+
+\par \textbf{2}. 设$V$是$\mathbb{F}$上的线性空间, $a\in \mathbb{F}$, $v\in V$, $av=0$. 证明: $a=0$ 或$v=0$.
+\par 证明: 设$a\neq 0$, 则$v=1v=(a^{-1}a)v=a^{-1}(av)=0$.
+
+\par \textbf{6}. 在$\mathbb{R}\cup \{\infty \} \cup \{-\infty\}$上定义加法和标量乘法如下: 实数加法和乘法按通常法则定义; 对于$t\in \mathbb{R}$,
+\begin{equation*}
+\begin{array}{c}
+t \infty=\left\{\begin{array}{ll}
+-\infty & \text { if } t<0, \\
+0 & \text { if } t=0, \\
+\infty & \text { if } t>0,
+\end{array} \quad t(-\infty)=\left\{\begin{array}{ll}
+\infty & \text { if } t<0 \\
+0 & \text { if } t=0 \\
+-\infty & \text { if } t>0
+\end{array}\right.\right. \\
+t+\infty=\infty+t=\infty, \quad t+(-\infty)=(-\infty)+t=-\infty \\
+\infty+\infty=\infty, \quad(-\infty)+(-\infty)=-\infty, \quad \infty+(-\infty)=0
+\end{array}
+\end{equation*}
+如此定义的$\mathbb{R}\cup \{\infty \} \cup \{-\infty\}$是否为$\mathbb{R}$上的线性空间?
+
+\par 解: $\infty+\infty+(-\infty)=\infty+(-\infty)=0$; 另一方面$(1+1-1)\infty=1*\infty=\infty$. 不满足分配性质, 故不是线性空间.
+
+\subsection{子空间}
+
+\par \textbf{12}. 设$V$是$\mathbb{F}$上的线性空间, 证明$V$的两个子空间的并是$V$的子空间当且仅当其中一个子空间包含另一个子空间.
+\par 证明: 充分性显然, 下证必要性. 设$U_1,U_2, U_1 \cup U_2$均为$V$的子空间, 若$U_1\setminus U_2$ 与$U_2\setminus U_1$均非空, 取$\alpha \in U_1\setminus U_2$, $\beta \in U_2\setminus U_1$, 由$U_1 \cup U_2$ 是子空间, $\alpha+\beta \in U_1 \cup U_2$. 若$\alpha+\beta \in U_1$, 推出$\beta \in U_1$; 若$\alpha+\beta \in U_2$, 推出$\alpha \in U_2$, 两者均矛盾. 故$U_1\setminus U_2$ 与$U_2\setminus U_1$必有一为空集. 命题得证.
+
+\par \textbf{19}. 设$V$是$\mathbb{F}$上的线性空间, $U_1,U_2,W$为$V$的子空间, 证明或否定: 若$U_1+W=U_2+W$, 则$U_1=U_2$.
+\par 解: 反例如下: 取$V=\mathbb{R}^3$, $U_1=\{(x,0,0)|x\in \mathbb{R}\}$, $U_2=\{(x,y,0)|x,y\in \mathbb{R}\}$, $W=\{(0,y,z)|y,z\in \mathbb{R}\}$.
+
+\par \textbf{23}. 设$V$是$\mathbb{F}$上的线性空间, $U_1,U_2,W$为$V$的子空间, 证明或否定: 若$V=U_1\oplus W=U_2\oplus W$, 则$U_1=U_2$.
+\par 解: 反例如下: 取$V=\mathbb{R}^2$, $U_1=\{(0,y)|y\in \mathbb{R}\}$, $U_2=\{(z,z)|z\in \mathbb{R}\}$, $W=\{(x,0)|x\in \mathbb{R}\}$.
+
+\section{有限维向量空间}
+
+\subsection{张成空间与线性无关}
+
+\par \textbf{10}. 设$V$是$\mathbb{F}$上的线性空间, $v_1,v_2,\cdots,v_m$在$V$中线性无关, $w\in V$. 证明: 若$v_1+w,v_2+w,\cdots,v_m+w$线性相关, 则$w \in \text{span}(v_1,v_2,\cdots,v_m)$.
+\par 证明: 存在不全为0的$\lambda_i (1\le i\le m)$,
+\begin{displaymath}
+0=\sum_{i=1}^m \lambda_i(v_i+w)=\sum_{i=1}^m \lambda_i v_i+ (\sum_{i=1}^m \lambda_i)w.
+\end{displaymath}
+令$\mu=\sum_{i=1}^m \lambda_i$, 若$\mu=0$, 与$v_1,v_2,\cdots,v_m$线性无关矛盾. 故$\mu\neq 0$, $w=-\frac{1}{\mu}\sum_{i=1}^m \lambda_i v_i$. 命题得证.
+
+\par \textbf{11}. 设$V$是$\mathbb{F}$上的线性空间, $v_1,v_2,\cdots,v_m$在$V$中线性无关, $w\in V$. 证明: $v_1,v_2,\cdots,v_m,w$线性无关当且仅当$w \notin \text{span}(v_1,v_2,\cdots,v_m)$.
+\par 证明: 必要性: 若$w \in \text{span}(v_1,v_2,\cdots,v_m)$, 设$w=\sum_{i=1}^m \lambda_i v_i$, $\lambda_i \in \mathbb{F}$. 这说明
+\begin{displaymath}
+\lambda_1 v_1+\lambda_2 v_2+\cdots+\lambda_m v_m-w=0.
+\end{displaymath}
+与$v_1,v_2,\cdots,v_m,w$线性无关矛盾. 故$w \notin \text{span}(v_1,v_2,\cdots,v_m)$.
+\par 充分性: 设$w \notin \text{span}(v_1,v_2,\cdots,v_m)$, 对于
+\begin{displaymath}
+\lambda_1 v_1+\lambda_2 v_2+\cdots+\lambda_m v_m+\mu w=0.
+\end{displaymath}
+若$\mu \neq 0$, 得$w \in \text{span}(v_1,v_2,\cdots,v_m)$,矛盾. 故$\mu=0$, 进而由$v_1,v_2,\cdots,v_m$线性无关, 每个$\lambda_i$均为0. 故 $v_1,v_2,\cdots,v_m,w$ 线性无关.
+
+\subsection{基}
+
+\subsection{维数}
+
+\section{线性映射}
+
+\end{CJK*}
+\end{document}
