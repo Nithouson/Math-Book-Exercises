@@ -11,8 +11,8 @@ Ch5 二项式系数 （12-4）
 Ch6 容斥原理及其应用 （3-14）  
 
 ## Linear Algebra Done Right (3rd edition) by S.Axler
-Ch1 向量空间
-Ch2 有限维向量空间
+Ch1 向量空间    
+Ch2 有限维向量空间    
 
 ## Project Euler
 根据欧拉计划社区规则，在此不公开我的解题思路；欢迎与我讨论    
